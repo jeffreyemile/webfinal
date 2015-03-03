@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<html lang ="en-us">
+	<head>
+		<meta charset ="utf-8">
+ 		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+<body>
+	<!--Nav-->
+	<nav>
+		<div class="nav">
+			<div class="photo">
+				<img src="icon.svg">
+			</div>
+				<p class="title">Milestone<p class="title1">Tracker</p>
+		</div>
+	</nav>
+
+	<!--About-->
+	<div class="about">
+		<p>This is an application designed to help you stay<br>on track to reaching your goal.</p>
+	</div>
+	<div class="about1">
+		<p>Click "Add" to begin a new milestone.</p>
+	</div>
+
+	<!--Inputs-->
+    	<ul id="sortable">
+			<div class="repeat">
+				<div class="wrapper">
+					<span class="add btn btn-success" value="">Add</span>
+					<div class="container">
+						<div class="template row milestone">
+							<div class="cell" width="80%">
+								<dl>
+									<dt><span class="weeks">Week</span></dt>
+									<dd><input type="text" name="milestone[{{row-count-placeholder}}][length]"
+										id="week" class="form-control"/></dd>
+								</dl>
+							</div>
+							<span class="move btn btn-info">Move</span>
+							<div width="10%"><span class="remove btn btn-danger1">Delete</span></div>
+
+
+
+
+							<div class="row">
+								<div class="col-lg-12">
+								    <div class="input-group">
+								        <div class="input-group-btn">
+								            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span><input type="hidden" name="milestone[{{row-count-placeholder}}]item[{{row-count-placeholder}}][type]" class="form-control"></button>
+								        </div><!-- /btn-group -->
+								        <input type="text" id="info" class="form-control" name="milestone[{{row-count-placeholder}}]item[{{row-count-placeholder}}][content]">
+
+								        
+								        
+								    </div><!-- /input-group -->
+								</div><!-- /.col-lg-12 -->
+							</div>
+
+
+
+							<div class="wrapper">
+								<span class="add btn btn-success1">+</span>
+								<div class="container">
+									<div class="template row item">
+										<span class="move btn btn-info">Move</span>
+										<div width="10%"><span class="remove btn btn-danger">-</span></div>
+
+										
+										<div class="row">
+							            	<div class="col-lg-12">
+							            		<div class="input-group">
+							            			<div class="input-group-btn">
+							            				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button> 
+							                  				<ul class="dropdown-menu" role="menu">
+							                      				<li><a href="#">$ (Payment)</a></li>
+							                      				
+							                 				 </ul>
+							              			</div><!-- /btn-group -->
+							               			 <input type="text" id="info1" class="form-control" aria-label="...">
+							            		</div><!-- /input-group -->
+							            	</div><!-- /.col-lg-12 -->
+							        	</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</ul>
+			
+			<div id ="end">
+					<button onclick="demoPDF()">Download pdf</button>
+				</div>
+			</div>
+			
+
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<script src="javascript/repeatable-fields.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="javascript/javascript.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.js"></script>
+	<script type="text/javascript" src="jspdf/FileSaver.js/FileSaver.js"></script>
+	<script type="text/javascript" src="jspdf/Blob.js/BlobBuilder.js"></script>
+	<script type="text/javascript" src="javascript/jsfunction.js"></script>
+	<script>
+		var count = 0;
+		$( "body" ).on( "click", ".weeks", function() {
+		  $( this ).after( "<p>Week " + (++count) + "</p>" );
+		});
+	</script>
+	
+</body>
